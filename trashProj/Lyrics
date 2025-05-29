@@ -1,1 +1,36 @@
+public class Lyrics {
+    public static void main(String[] args) {
+        String[] lyrics = {
+            "I don't want nobody else",                  // ~00:20
+            "Without you, there's no one left, then",   // ~00:24
+            "You're like Jordans on Saturday",          // ~00:28
+            "I gotta have you and I cannot wait now",   // ~00:32
+            "Hey, lil' shorty, say you care for me",    // ~00:36
+            "You know I care for you, you know that I'll be true", // ~00:40
+            "You know that I won't lie, you know that I will try", // ~00:44
+            "To be your everything"                     // ~00:48
+        };
+
+        // Approximate delay in milliseconds based on actual audio timing
+        int[] delays = {
+            2500, // 4 seconds
+            2500,
+            3000,
+            2800,
+            2800,
+            3000,
+            2800,
+            3000
+        };
+
+        for (int i = 0; i < lyrics.length; i++) {
+            System.out.println(lyrics[i]);
+            try {
+                Thread.sleep(delays[i]); // Wait based on individual timing
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+}
 
